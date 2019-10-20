@@ -12,7 +12,7 @@ import ObjectMapper
 
 class RemoteSerieRepository: SerieRepository {
     func getBestSeriesList(page: Int, and onCompletion: @escaping (SerieListEntity?) -> Void, onError: @escaping () -> Void) {
-        let path = API_BASE_URL + "discover/tv"
+        let path = API_BASE_URL + "/discover/tv"
         
         let parameters: Parameters = [
             "api_key": API_KEY,
@@ -20,7 +20,7 @@ class RemoteSerieRepository: SerieRepository {
             "page": page
         ]
         
-        Alamofire.request(path, parameters: parameters).responseJSON { response in
+        Alamofire.request(path, parameters: parameters).debugLog().responseJSON { response in
             if(response.response?.statusCode == 200){
                 guard let result = response.result.value else {
                     onError()
@@ -41,5 +41,16 @@ class RemoteSerieRepository: SerieRepository {
     
     func getSimilarSeries(id: Int, and onCompletion: @escaping (SerieListEntity?) -> Void, onError: @escaping () -> Void) {
         
+    }
+}
+
+extension Request {
+    public func debugLog() -> Self {
+        #if DEBUG
+            debugPrint("=======================================")
+            debugPrint(self)
+            debugPrint("=======================================")
+        #endif
+        return self
     }
 }

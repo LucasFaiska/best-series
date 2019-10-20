@@ -7,16 +7,29 @@
 //
 
 import Foundation
+import SwiftUI
 
-class SerieListPresenter: SerieListPresentationLogic, ObservableObject {
-    private var view: SerieListViewLogic?
+class SerieListPresenter: ObservableObject {
     private var interactor: SerieInteractorProtocol?
+    private var currentPage = 1
     
-    init(view: SerieListViewLogic) {
-        self.view = view
+    @Published var series: [Serie] = []
+    @Published var isLoading = false
+    @Published var hasError = false
+    
+    init (interactor: SerieInteractorProtocol) {
+        self.interactor = interactor
     }
     
-    func requestSeries() {
-        view?.showLoading()
+    func loadSeries() {
+        self.isLoading = true
+        
+        interactor?.fetchBestSeries(page: currentPage, and: { serieList in
+            self.series += serieList?.results ?? []
+            self.isLoading = false
+        }, onError: {
+            self.hasError = true
+            self.isLoading = false
+        })
     }
 }

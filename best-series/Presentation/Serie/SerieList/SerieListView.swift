@@ -9,17 +9,28 @@
 import SwiftUI
 import ObjectMapper
 
-struct SerieListView: SerieListViewLogic, View {
-    var presenter: SerieListPresenter?
-    let series = [Serie(id:0, title: "Arrow"), Serie(id: 1, title: "Flash"), Serie(id:2, title: "Breaking Bad"), Serie(id:3, title: "Lucifer")]
+struct SerieListView: View {
+    @ObservedObject var presenter: SerieListPresenter
     
-    func showLoading() {
+    init(presenter: SerieListPresenter) {
+        self.presenter = presenter
     }
     
     var body: some View {
         NavigationView {
-            List(self.series) { (serie: Serie) in
-                SerieListItemView(serie: serie)
+            Group {
+                if presenter.isLoading {
+                    LoadingView()
+                } else {
+                    List(self.presenter.series) { (serie: Serie) in
+                        SerieListItemView(serie: serie)
+                    }
+                }
+            }
+        }
+        .onAppear {
+            if self.presenter.series.isEmpty {
+                self.presenter.loadSeries()
             }
         }
     }

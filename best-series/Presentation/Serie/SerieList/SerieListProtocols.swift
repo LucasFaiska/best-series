@@ -11,15 +11,3 @@ import UIKit
 protocol SerieListSceneCreationLogic {
     static func createScene() -> UIViewController
 }
-
-protocol SerieListPresentationLogic {
-    func requestSeries()
-}
-
-protocol SerieListViewLogic {
-    func showLoading()
-    //func hideLoading()
-    //func present(songs: [ViewSong])
-    //func presentError(message: String)
-}
-

@@ -11,9 +11,10 @@ import SwiftUI
 
 class SerieListSceneFactory: SerieListSceneCreationLogic {
     static func createScene() -> UIViewController {
-        var view = SerieListView()
-        let presenter = SerieListPresenter(view: view)
-        view.presenter = presenter
+        let repository = RemoteSerieRepository()
+        let interactor = SerieInteractor(serieRepository: repository)
+        let presenter = SerieListPresenter(interactor: interactor)
+        let view = SerieListView(presenter: presenter)
         return UIHostingController(rootView: view)
     }
 }
