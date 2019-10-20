@@ -13,16 +13,16 @@ private let RESULTS = "results"
 private let PAGE = "page"
 private let TOTALPAGES = "total_pages"
 
-class SerieList:Mappable {
-    internal var results: [Serie]?
+public class SerieListEntity:Mappable {
+    internal var results: [SerieEntity]?
     internal var page: Int?
     internal var totalPages: Int?
     
-    required init?(map: Map) {
+    required public init?(map: Map) {
         mapping(map: map)
     }
     
-    func mapping(map: Map) {
+    public func mapping(map: Map) {
         results <- map[RESULTS]
         page <- map[PAGE]
         totalPages <- map[TOTALPAGES]
@@ -30,14 +30,14 @@ class SerieList:Mappable {
 }
 
 private let ID = "id"
-private let TITLE = "original_name"
+private let TITLE = "name"
 private let VOTEAVERAGE = "vote_average"
 private let POSTER = "poster_path"
 private let FIRSTAIRDATE = "first_air_date"
 private let OVERVIEW = "overview"
 private let GENRES = "genres"
 
-class Serie:Mappable {
+public class SerieEntity:Mappable {
     internal var id: Int?
     internal var title: String?
     internal var voteAverage: Double?
@@ -46,11 +46,11 @@ class Serie:Mappable {
     internal var overview: String?
     internal var genres: [Genre]?
     
-    required init?(map:Map) {
+    required public init?(map:Map) {
         mapping(map: map)
     }
     
-    func mapping(map:Map){
+    public func mapping(map:Map){
         id <- map[ID]
         title <- map[TITLE]
         voteAverage <- map[VOTEAVERAGE]
@@ -63,10 +63,14 @@ class Serie:Mappable {
 
 private let GENRENAME = "name"
 
-class Genre: Codable {
-    internal var name: String
+public class GenreEntity:Mappable {
+    internal var name: String?
     
-    func mapping(map:Map){
+    required public init?(map:Map) {
+        mapping(map: map)
+    }
+    
+    public func mapping(map:Map){
         name <- map[GENRENAME]
     }
 }

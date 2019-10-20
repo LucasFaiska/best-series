@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import best_series
+@testable import Best_Series
 
 class best_seriesTests: XCTestCase {
 

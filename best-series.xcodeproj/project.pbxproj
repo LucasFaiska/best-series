@@ -9,7 +9,14 @@
 /* Begin PBXBuildFile section */
 		4DF1DC22E69BC33454F48437 /* Pods_best_seriesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC0A4BC754DB2722A1DF5858 /* Pods_best_seriesTests.framework */; };
 		9940408BF8769B241D4FAFB8 /* Pods_best_series_best_seriesUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBABBC5AE0CD78AB36E362E4 /* Pods_best_series_best_seriesUITests.framework */; };
-		A0219D06235C02BE006B9444 /* Serie.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0219D05235C02BE006B9444 /* Serie.swift */; };
+		A0219D06235C02BE006B9444 /* SerieEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0219D05235C02BE006B9444 /* SerieEntity.swift */; };
+		A0219D09235C1640006B9444 /* SerieRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0219D08235C1640006B9444 /* SerieRepository.swift */; };
+		A0219D0B235C1784006B9444 /* RemoteSerieRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0219D0A235C1784006B9444 /* RemoteSerieRepository.swift */; };
+		A0219D0E235C1BF3006B9444 /* ApiConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0219D0D235C1BF3006B9444 /* ApiConstants.swift */; };
+		A0219D13235C3DD9006B9444 /* SerieInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0219D12235C3DD9006B9444 /* SerieInteractor.swift */; };
+		A0219D15235C3E50006B9444 /* SerieInteractorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0219D14235C3E50006B9444 /* SerieInteractorProtocol.swift */; };
+		A0219D17235C42FF006B9444 /* SerieListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0219D16235C42FF006B9444 /* SerieListItemView.swift */; };
+		A0219D19235C4CBC006B9444 /* SerieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0219D18235C4CBC006B9444 /* SerieModel.swift */; };
 		A0496E06235ACA1900F60B89 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0496E05235ACA1900F60B89 /* AppDelegate.swift */; };
 		A0496E0C235ACA1A00F60B89 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0496E0B235ACA1A00F60B89 /* Assets.xcassets */; };
 		A0496E0F235ACA1A00F60B89 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0496E0E235ACA1A00F60B89 /* Preview Assets.xcassets */; };
@@ -45,7 +52,14 @@
 		2FD3BED0471B5FF823233A55 /* Pods-best-series.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-best-series.release.xcconfig"; path = "Target Support Files/Pods-best-series/Pods-best-series.release.xcconfig"; sourceTree = "<group>"; };
 		35A97ECB3DBDC553F7271314 /* Pods-best-seriesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-best-seriesTests.release.xcconfig"; path = "Target Support Files/Pods-best-seriesTests/Pods-best-seriesTests.release.xcconfig"; sourceTree = "<group>"; };
 		905FE886984A303015AC9CB1 /* Pods-best-series.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-best-series.debug.xcconfig"; path = "Target Support Files/Pods-best-series/Pods-best-series.debug.xcconfig"; sourceTree = "<group>"; };
-		A0219D05235C02BE006B9444 /* Serie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Serie.swift; sourceTree = "<group>"; };
+		A0219D05235C02BE006B9444 /* SerieEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerieEntity.swift; sourceTree = "<group>"; };
+		A0219D08235C1640006B9444 /* SerieRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerieRepository.swift; sourceTree = "<group>"; };
+		A0219D0A235C1784006B9444 /* RemoteSerieRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteSerieRepository.swift; sourceTree = "<group>"; };
+		A0219D0D235C1BF3006B9444 /* ApiConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiConstants.swift; sourceTree = "<group>"; };
+		A0219D12235C3DD9006B9444 /* SerieInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerieInteractor.swift; sourceTree = "<group>"; };
+		A0219D14235C3E50006B9444 /* SerieInteractorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerieInteractorProtocol.swift; sourceTree = "<group>"; };
+		A0219D16235C42FF006B9444 /* SerieListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerieListItemView.swift; sourceTree = "<group>"; };
+		A0219D18235C4CBC006B9444 /* SerieModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerieModel.swift; sourceTree = "<group>"; };
 		A0496E02235ACA1900F60B89 /* Best Series.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Best Series.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0496E05235ACA1900F60B89 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A0496E0B235ACA1A00F60B89 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -123,25 +137,45 @@
 		A0219D02235BE902006B9444 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				A0219D03235BE91F006B9444 /* Serie */,
+				A0219D11235C1F18006B9444 /* Serie */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
 		};
-		A0219D03235BE91F006B9444 /* Serie */ = {
+		A0219D0C235C1BDA006B9444 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				A0219D04235C0229006B9444 /* Model */,
+				A0219D0D235C1BF3006B9444 /* ApiConstants.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		A0219D0F235C1ED5006B9444 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				A0219D10235C1EE0006B9444 /* Serie */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		A0219D10235C1EE0006B9444 /* Serie */ = {
+			isa = PBXGroup;
+			children = (
+				A0219D05235C02BE006B9444 /* SerieEntity.swift */,
+				A0219D08235C1640006B9444 /* SerieRepository.swift */,
+				A0219D0A235C1784006B9444 /* RemoteSerieRepository.swift */,
 			);
 			path = Serie;
 			sourceTree = "<group>";
 		};
-		A0219D04235C0229006B9444 /* Model */ = {
+		A0219D11235C1F18006B9444 /* Serie */ = {
 			isa = PBXGroup;
 			children = (
-				A0219D05235C02BE006B9444 /* Serie.swift */,
+				A0219D12235C3DD9006B9444 /* SerieInteractor.swift */,
+				A0219D14235C3E50006B9444 /* SerieInteractorProtocol.swift */,
+				A0219D18235C4CBC006B9444 /* SerieModel.swift */,
 			);
-			path = Model;
+			path = Serie;
 			sourceTree = "<group>";
 		};
 		A0496DF9235ACA1900F60B89 = {
@@ -169,6 +203,8 @@
 		A0496E04235ACA1900F60B89 /* best-series */ = {
 			isa = PBXGroup;
 			children = (
+				A0219D0F235C1ED5006B9444 /* Data */,
+				A0219D0C235C1BDA006B9444 /* Utils */,
 				A0219D02235BE902006B9444 /* Domain */,
 				A0496E37235ACC7800F60B89 /* Presentation */,
 				A0496E36235ACC5700F60B89 /* ConfigFiles */,
@@ -254,6 +290,7 @@
 				A0496E41235AD44600F60B89 /* SerieListSceneFactory.swift */,
 				A0496E43235AD52C00F60B89 /* SerieListView.swift */,
 				A0496E45235B92B200F60B89 /* SerieListPresenter.swift */,
+				A0219D16235C42FF006B9444 /* SerieListItemView.swift */,
 			);
 			path = SerieList;
 			sourceTree = "<group>";
@@ -505,9 +542,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0496E40235AD32E00F60B89 /* SerieListProtocols.swift in Sources */,
+				A0219D09235C1640006B9444 /* SerieRepository.swift in Sources */,
+				A0219D0B235C1784006B9444 /* RemoteSerieRepository.swift in Sources */,
+				A0219D13235C3DD9006B9444 /* SerieInteractor.swift in Sources */,
 				A0496E46235B92B200F60B89 /* SerieListPresenter.swift in Sources */,
-				A0219D06235C02BE006B9444 /* Serie.swift in Sources */,
+				A0219D06235C02BE006B9444 /* SerieEntity.swift in Sources */,
+				A0219D19235C4CBC006B9444 /* SerieModel.swift in Sources */,
+				A0219D15235C3E50006B9444 /* SerieInteractorProtocol.swift in Sources */,
+				A0219D0E235C1BF3006B9444 /* ApiConstants.swift in Sources */,
 				A0496E42235AD44600F60B89 /* SerieListSceneFactory.swift in Sources */,
+				A0219D17235C42FF006B9444 /* SerieListItemView.swift in Sources */,
 				A0496E06235ACA1900F60B89 /* AppDelegate.swift in Sources */,
 				A0496E44235AD52C00F60B89 /* SerieListView.swift in Sources */,
 			);

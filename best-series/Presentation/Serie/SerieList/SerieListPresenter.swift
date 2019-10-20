@@ -8,8 +8,9 @@
 
 import Foundation
 
-class SerieListPresenter: SerieListPresentationLogic {
+class SerieListPresenter: SerieListPresentationLogic, ObservableObject {
     private var view: SerieListViewLogic?
+    private var interactor: SerieInteractorProtocol?
     
     init(view: SerieListViewLogic) {
         self.view = view
