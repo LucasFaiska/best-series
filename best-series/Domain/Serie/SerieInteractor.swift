@@ -9,6 +9,7 @@
 import Foundation
 
 class SerieInteractor: SerieInteractorProtocol {
+    let POSTER_BASE_URL:String = "https://image.tmdb.org/t/p/w342"
     private let repository: SerieRepository
     
     init(serieRepository: SerieRepository) {
@@ -21,8 +22,8 @@ class SerieInteractor: SerieInteractorProtocol {
             let serie = Serie(id: serieEntity.id ?? 0,
                               title: serieEntity.title ?? "",
                               voteAverage: serieEntity.voteAverage ?? 0,
-                              poster: serieEntity.poster ?? "",
-                              firstAirDate: serieEntity.firstAirDate ?? Date(),
+                              poster: POSTER_BASE_URL + (serieEntity.poster ?? ""),
+                              firstAirDate: serieEntity.firstAirDate ?? "",
                               overview: serieEntity.overview ?? "")
             results.append(serie)
         }

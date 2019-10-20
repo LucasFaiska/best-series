@@ -42,7 +42,7 @@ public class SerieEntity:Mappable {
     internal var title: String?
     internal var voteAverage: Double?
     internal var poster: String?
-    internal var firstAirDate: Date?
+    internal var firstAirDate: String?
     internal var overview: String?
     internal var genres: [Genre]?
     

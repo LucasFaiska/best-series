@@ -27,6 +27,7 @@ struct SerieListView: View {
                     }
                 }
             }
+            .navigationBarTitle("Bests TV Series")
         }
         .onAppear {
             if self.presenter.series.isEmpty {

@@ -25,11 +25,11 @@ struct Serie: Identifiable {
     let title: String
     let voteAverage: Double
     let poster: String
-    let firstAirDate: Date
+    let firstAirDate: String
     let overview: String
     //let genres: [Genre]?
     
-    init(id: Int=0, title: String="", voteAverage: Double=0, poster: String="", firstAirDate: Date=Date(), overview: String="") {
+    init(id: Int=0, title: String="", voteAverage: Double=0, poster: String="", firstAirDate: String="", overview: String="") {
         self.id = id
         self.title = title
         self.voteAverage = voteAverage
@@ -37,6 +37,14 @@ struct Serie: Identifiable {
         self.firstAirDate = firstAirDate
         self.overview = overview
         //self.genres = genres
+    }
+    
+    var firstAirYear: String {
+        return String(self.firstAirDate.prefix(4))
+    }
+    
+    var posterUrl: URL? {
+        return URL(string: poster)
     }
 }
 
