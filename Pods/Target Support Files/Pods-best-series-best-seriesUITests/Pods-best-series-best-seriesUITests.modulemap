@@ -1,0 +1,6 @@
+framework module Pods_best_series_best_seriesUITests {
+  umbrella header "Pods-best-series-best-seriesUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
