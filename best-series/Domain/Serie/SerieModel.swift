@@ -27,16 +27,16 @@ struct Serie: Identifiable {
     let poster: String
     let firstAirDate: String
     let overview: String
-    //let genres: [Genre]?
+    let genres: [Genre]
     
-    init(id: Int=0, title: String="", voteAverage: Double=0, poster: String="", firstAirDate: String="", overview: String="") {
+    init(id: Int=0, title: String="", voteAverage: Double=0, poster: String="", firstAirDate: String="", overview: String="", genres: [Genre]=[]) {
         self.id = id
         self.title = title
         self.voteAverage = voteAverage
         self.poster = poster
         self.firstAirDate = firstAirDate
         self.overview = overview
-        //self.genres = genres
+        self.genres = genres
     }
     
     var firstAirYear: String {
@@ -48,10 +48,12 @@ struct Serie: Identifiable {
     }
 }
 
-public class Genre {
-    let name: String?
+struct Genre: Identifiable {
+    let id: Int
+    let name: String
     
-    init(name: String) {
+    init(id: Int, name: String) {
+        self.id = id
         self.name = name
     }
 }

@@ -35,8 +35,26 @@ class RemoteSerieRepository: SerieRepository {
         }
     }
     
-    func getSerieDetail(id: Int, and onCompletion: @escaping (SerieEntity?) -> Void, onError: @escaping () -> Void) {
+    func getSerieDetail(serieId: Int, and onCompletion: @escaping (SerieEntity?) -> Void, onError: @escaping () -> Void) {
+        let path = API_BASE_URL + "/tv/" + String(serieId)
         
+        let parameters: Parameters = [
+            "api_key": API_KEY
+        ]
+        
+        Alamofire.request(path, parameters: parameters).debugLog().responseJSON { response in
+            if(response.response?.statusCode == 200){
+                guard let result = response.result.value else {
+                    onError()
+                    return
+                }
+                
+                let serieDetail = Mapper<SerieEntity>().map(JSONObject: result)
+                onCompletion(serieDetail)
+            } else {
+                onError()
+            }
+        }
     }
     
     func getSimilarSeries(id: Int, and onCompletion: @escaping (SerieListEntity?) -> Void, onError: @escaping () -> Void) {

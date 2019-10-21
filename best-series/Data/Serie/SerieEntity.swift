@@ -44,7 +44,7 @@ public class SerieEntity:Mappable {
     internal var poster: String?
     internal var firstAirDate: String?
     internal var overview: String?
-    internal var genres: [Genre]?
+    internal var genres: [GenreEntity]?
     
     required public init?(map:Map) {
         mapping(map: map)
@@ -61,9 +61,11 @@ public class SerieEntity:Mappable {
     }
 }
 
+private let GENREID = "id"
 private let GENRENAME = "name"
 
 public class GenreEntity:Mappable {
+    internal var id: Int?
     internal var name: String?
     
     required public init?(map:Map) {
@@ -71,6 +73,7 @@ public class GenreEntity:Mappable {
     }
     
     public func mapping(map:Map){
+        id <- map[GENREID]
         name <- map[GENRENAME]
     }
 }

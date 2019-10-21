@@ -10,4 +10,5 @@ import Foundation
 
 protocol SerieInteractorProtocol {
     func fetchBestSeries(page: Int, and onCompletion: @escaping (SerieList?) -> Void, onError: @escaping () -> Void)
+    func fetchSerieDetail(serieId: Int, and onCompletion: @escaping (Serie?) -> Void, onError: @escaping () -> Void)
 }

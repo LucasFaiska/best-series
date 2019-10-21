@@ -19,6 +19,10 @@
 		A0219D19235C4CBC006B9444 /* SerieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0219D18235C4CBC006B9444 /* SerieModel.swift */; };
 		A0219D1E235CE35A006B9444 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0219D1D235CE35A006B9444 /* LoadingView.swift */; };
 		A0219D20235CFD47006B9444 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0219D1F235CFD47006B9444 /* ImageLoader.swift */; };
+		A0219D22235D0952006B9444 /* SerieDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0219D21235D0952006B9444 /* SerieDetailView.swift */; };
+		A0219D24235D0C17006B9444 /* SerieDetailSceneFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0219D23235D0C17006B9444 /* SerieDetailSceneFactory.swift */; };
+		A0219D26235D0C4E006B9444 /* SerieDetailProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0219D25235D0C4E006B9444 /* SerieDetailProtocols.swift */; };
+		A0219D28235D299C006B9444 /* SerieDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0219D27235D299C006B9444 /* SerieDetailPresenter.swift */; };
 		A0496E06235ACA1900F60B89 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0496E05235ACA1900F60B89 /* AppDelegate.swift */; };
 		A0496E0C235ACA1A00F60B89 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0496E0B235ACA1A00F60B89 /* Assets.xcassets */; };
 		A0496E0F235ACA1A00F60B89 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0496E0E235ACA1A00F60B89 /* Preview Assets.xcassets */; };
@@ -64,6 +68,10 @@
 		A0219D18235C4CBC006B9444 /* SerieModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerieModel.swift; sourceTree = "<group>"; };
 		A0219D1D235CE35A006B9444 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		A0219D1F235CFD47006B9444 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		A0219D21235D0952006B9444 /* SerieDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerieDetailView.swift; sourceTree = "<group>"; };
+		A0219D23235D0C17006B9444 /* SerieDetailSceneFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerieDetailSceneFactory.swift; sourceTree = "<group>"; };
+		A0219D25235D0C4E006B9444 /* SerieDetailProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerieDetailProtocols.swift; sourceTree = "<group>"; };
+		A0219D27235D299C006B9444 /* SerieDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerieDetailPresenter.swift; sourceTree = "<group>"; };
 		A0496E02235ACA1900F60B89 /* Best Series.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Best Series.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0496E05235ACA1900F60B89 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A0496E0B235ACA1A00F60B89 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -312,6 +320,10 @@
 		A0496E3B235ACCC500F60B89 /* SerieDetail */ = {
 			isa = PBXGroup;
 			children = (
+				A0219D21235D0952006B9444 /* SerieDetailView.swift */,
+				A0219D23235D0C17006B9444 /* SerieDetailSceneFactory.swift */,
+				A0219D25235D0C4E006B9444 /* SerieDetailProtocols.swift */,
+				A0219D27235D299C006B9444 /* SerieDetailPresenter.swift */,
 			);
 			path = SerieDetail;
 			sourceTree = "<group>";
@@ -557,17 +569,21 @@
 			files = (
 				A0496E40235AD32E00F60B89 /* SerieListProtocols.swift in Sources */,
 				A0219D09235C1640006B9444 /* SerieRepository.swift in Sources */,
+				A0219D28235D299C006B9444 /* SerieDetailPresenter.swift in Sources */,
 				A0219D20235CFD47006B9444 /* ImageLoader.swift in Sources */,
 				A0219D0B235C1784006B9444 /* RemoteSerieRepository.swift in Sources */,
 				A0219D13235C3DD9006B9444 /* SerieInteractor.swift in Sources */,
 				A0496E46235B92B200F60B89 /* SerieListPresenter.swift in Sources */,
+				A0219D22235D0952006B9444 /* SerieDetailView.swift in Sources */,
 				A0219D1E235CE35A006B9444 /* LoadingView.swift in Sources */,
 				A0219D06235C02BE006B9444 /* SerieEntity.swift in Sources */,
+				A0219D26235D0C4E006B9444 /* SerieDetailProtocols.swift in Sources */,
 				A0219D19235C4CBC006B9444 /* SerieModel.swift in Sources */,
 				A0219D15235C3E50006B9444 /* SerieInteractorProtocol.swift in Sources */,
 				A0219D0E235C1BF3006B9444 /* ApiConstants.swift in Sources */,
 				A0496E42235AD44600F60B89 /* SerieListSceneFactory.swift in Sources */,
 				A0219D17235C42FF006B9444 /* SerieListItemView.swift in Sources */,
+				A0219D24235D0C17006B9444 /* SerieDetailSceneFactory.swift in Sources */,
 				A0496E06235ACA1900F60B89 /* AppDelegate.swift in Sources */,
 				A0496E44235AD52C00F60B89 /* SerieListView.swift in Sources */,
 			);

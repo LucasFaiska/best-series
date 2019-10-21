@@ -7,7 +7,6 @@
 //
 
 import SwiftUI
-import ObjectMapper
 
 struct SerieListView: View {
     @ObservedObject var presenter: SerieListPresenter
@@ -23,7 +22,9 @@ struct SerieListView: View {
                     LoadingView()
                 } else {
                     List(self.presenter.series) { (serie: Serie) in
-                        SerieListItemView(serie: serie)
+                        NavigationLink(destination: SerieDetailSceneFactory.createScene(serieId: serie.id)) {
+                            SerieListItemView(serie: serie)
+                        }
                     }
                 }
             }

@@ -40,4 +40,30 @@ class SerieInteractor: SerieInteractorProtocol {
             }
         }, onError: onError)
     }
+    
+    internal func mapEntityToModel(entity: SerieEntity) -> Serie {
+        var genres: [Genre] = Array()
+        for genre in entity.genres! {
+            genres.append(Genre(id: genre.id ?? 0, name: genre.name ?? ""))
+        }
+        
+        return Serie(id: entity.id ?? 0,
+                     title: entity.title ?? "",
+                     voteAverage: entity.voteAverage ?? 0,
+                     poster: POSTER_BASE_URL + (entity.poster ?? ""),
+                     firstAirDate: entity.firstAirDate ?? "",
+                     overview: entity.overview ?? "",
+                     genres: genres)
+    }
+    
+    func fetchSerieDetail(serieId: Int, and onCompletion: @escaping (Serie?) -> Void, onError: @escaping () -> Void) {
+        repository.getSerieDetail(serieId: serieId, and: {
+            serieEntity in
+            if let entity = serieEntity {
+                onCompletion(self.mapEntityToModel(entity: entity))
+            } else {
+                onCompletion(Serie())
+            }
+        }, onError: onError)
+    }
 }
