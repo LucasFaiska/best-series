@@ -13,7 +13,7 @@ struct SerieList {
     let page: Int?
     let totalPages: Int?
     
-    init(results: [Serie]?, page: Int?, totalPages: Int?) {
+    init(results: [Serie]=[], page: Int=0, totalPages: Int=0) {
         self.results = results
         self.page = page
         self.totalPages = totalPages
@@ -28,8 +28,9 @@ struct Serie: Identifiable {
     let firstAirDate: String
     let overview: String
     let genres: [Genre]
+    let similarSeries: SerieList
     
-    init(id: Int=0, title: String="", voteAverage: Double=0, poster: String="", firstAirDate: String="", overview: String="", genres: [Genre]=[]) {
+    init(id: Int=0, title: String="", voteAverage: Double=0, poster: String="", firstAirDate: String="", overview: String="", genres: [Genre]=[], similarSeries: SerieList=SerieList()) {
         self.id = id
         self.title = title
         self.voteAverage = voteAverage
@@ -37,6 +38,7 @@ struct Serie: Identifiable {
         self.firstAirDate = firstAirDate
         self.overview = overview
         self.genres = genres
+        self.similarSeries = similarSeries
     }
     
     var firstAirYear: String {

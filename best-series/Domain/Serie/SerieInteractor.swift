@@ -27,7 +27,7 @@ class SerieInteractor: SerieInteractorProtocol {
                               overview: serieEntity.overview ?? "")
             results.append(serie)
         }
-        return SerieList(results: results, page: entity.page, totalPages: entity.totalPages)
+        return SerieList(results: results, page: entity.page ?? 0, totalPages: entity.totalPages ?? 0)
     }
     
     func fetchBestSeries(page: Int, and onCompletion: @escaping (SerieList?) -> Void, onError: @escaping () -> Void) {
@@ -46,6 +46,13 @@ class SerieInteractor: SerieInteractorProtocol {
         for genre in entity.genres! {
             genres.append(Genre(id: genre.id ?? 0, name: genre.name ?? ""))
         }
+
+        var similarSeries: SerieList
+        if let similarSeriesEntity = entity.similarSeries {
+            similarSeries = mapEntityToModel(entity: similarSeriesEntity)
+        } else {
+            similarSeries = SerieList()
+        }
         
         return Serie(id: entity.id ?? 0,
                      title: entity.title ?? "",
@@ -53,7 +60,8 @@ class SerieInteractor: SerieInteractorProtocol {
                      poster: POSTER_BASE_URL + (entity.poster ?? ""),
                      firstAirDate: entity.firstAirDate ?? "",
                      overview: entity.overview ?? "",
-                     genres: genres)
+                     genres: genres,
+                     similarSeries: similarSeries)
     }
     
     func fetchSerieDetail(serieId: Int, and onCompletion: @escaping (Serie?) -> Void, onError: @escaping () -> Void) {

@@ -21,7 +21,7 @@ struct SerieDetailView: View {
     
     var body: some View {
         ScrollView {
-            Group {
+            VStack {
                 if (self.presenter.serie != nil) {
                     PosterView(image: self.imageLoader.image)
                         .onAppear {
@@ -29,10 +29,8 @@ struct SerieDetailView: View {
                                 self.imageLoader.downloadImage(url: url)
                             }
                     }
-                    
-                    
                     SerieDetailsSectionView(serie: self.presenter.serie!).padding(16)
-                    
+                    SimilarSeriesSectionView(series: (self.presenter.serie?.similarSeries.results)!).padding(16)
                 } else {
                     LoadingView()
                 }
@@ -49,12 +47,12 @@ struct SerieDetailView: View {
             ZStack {
                 Rectangle()
                     .foregroundColor(.gray)
-                    .aspectRatio(500/750, contentMode: .fit)
+                    .aspectRatio(500/750, contentMode: .fill)
                 
                 if (self.image != nil) {
                     Image(uiImage: self.image!)
                         .resizable()
-                        .aspectRatio(500/750, contentMode: .fit)
+                        .aspectRatio(500/750, contentMode: .fill)
                 }
             }
         }
@@ -65,8 +63,6 @@ struct SerieDetailView: View {
         
         var body: some View {
             VStack(alignment: .leading) {
-                Text(serie.title).font(.title)
-                
                 Text("Overview").font(.headline).padding(.top, 8)
                 Text(serie.overview)
                     .font(.body)
@@ -81,6 +77,62 @@ struct SerieDetailView: View {
                 Text("Genres").font(.headline).padding(.top, 8)
                 ForEach(serie.genres) { (genre: Genre) in
                     Text(genre.name).font(.body)
+                }
+            }
+        }
+    }
+    
+    struct SimilarSeriesSectionView: View {
+        var series: [Serie]
+        
+        var body: some View {
+            VStack(alignment: .leading) {
+                Text("Similar Series").font(.headline).padding(.top, 8)
+                ScrollView(.horizontal, content: {
+                    HStack(spacing: 20) {
+                        ForEach(series) { serie in
+                            NavigationLink(destination: SerieDetailSceneFactory.createScene(serieId: serie.id)) {
+                                SimilarSeriesThumbnail(serie: serie)
+                            }.buttonStyle(PlainButtonStyle())
+                        }
+                    }
+                })
+            }
+        }
+    }
+    
+    struct SimilarSeriesThumbnail: View {
+        var serie: Serie
+        @ObservedObject var imageLoader = ImageLoader()
+        
+        var body: some View {
+            ZStack(alignment: .bottomLeading) {
+                if (self.imageLoader.image != nil) {
+                    GeometryReader { geometry in
+                        Image(uiImage: self.imageLoader.image!)
+                            .resizable(resizingMode: Image.ResizingMode.stretch)
+                            .aspectRatio(contentMode: .fill)
+                            .frame(maxWidth: geometry.size.width)
+                            .clipped()
+                    }
+                }
+                
+                VStack(alignment: .leading) {
+                    Text(self.serie.title)
+                        .font(.headline)
+                        .foregroundColor(Color.white)
+                        .lineLimit(1)
+                }
+                .frame(maxWidth: .infinity, alignment: .bottomLeading)
+                .padding(EdgeInsets.init(top: 16, leading: 16, bottom: 16, trailing: 16))
+                .background(Rectangle().foregroundColor(Color.black).opacity(0.6).blur(radius: 2.5))
+            }
+            .cornerRadius(10)
+            .frame(height: 200)
+            .padding(EdgeInsets.init(top: 8, leading: 0, bottom: 8, trailing: 0))
+            .onAppear {
+                if let url = self.serie.posterUrl {
+                    self.imageLoader.downloadImage(url: url)
                 }
             }
         }

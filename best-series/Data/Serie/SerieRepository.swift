@@ -11,5 +11,4 @@ import Foundation
 protocol SerieRepository {
     func getBestSeriesList(page: Int, and onCompletion: @escaping (SerieListEntity?) -> Void, onError: @escaping () -> Void)
     func getSerieDetail(serieId: Int, and onCompletion: @escaping (SerieEntity?) -> Void, onError: @escaping () -> Void)
-    func getSimilarSeries(id: Int, and onCompletion: @escaping (SerieListEntity?) -> Void, onError: @escaping () -> Void)
 }

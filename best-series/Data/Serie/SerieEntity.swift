@@ -36,6 +36,7 @@ private let POSTER = "poster_path"
 private let FIRSTAIRDATE = "first_air_date"
 private let OVERVIEW = "overview"
 private let GENRES = "genres"
+private let SIMILAR = "similar"
 
 public class SerieEntity:Mappable {
     internal var id: Int?
@@ -45,6 +46,7 @@ public class SerieEntity:Mappable {
     internal var firstAirDate: String?
     internal var overview: String?
     internal var genres: [GenreEntity]?
+    internal var similarSeries: SerieListEntity?
     
     required public init?(map:Map) {
         mapping(map: map)
@@ -58,6 +60,7 @@ public class SerieEntity:Mappable {
         firstAirDate <- map[FIRSTAIRDATE]
         overview <- map[OVERVIEW]
         genres <- map[GENRES]
+        similarSeries <- map[SIMILAR]
     }
 }
 

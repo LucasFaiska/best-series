@@ -12,6 +12,7 @@ target 'best-series' do
   target 'best-seriesTests' do
     inherit! :search_paths
     # Pods for testing
+    pod 'Nimble', '~> 6.0.0'
   end
 
   target 'best-seriesUITests' do

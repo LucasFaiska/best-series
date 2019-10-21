@@ -26,7 +26,6 @@
 		A0496E06235ACA1900F60B89 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0496E05235ACA1900F60B89 /* AppDelegate.swift */; };
 		A0496E0C235ACA1A00F60B89 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0496E0B235ACA1A00F60B89 /* Assets.xcassets */; };
 		A0496E0F235ACA1A00F60B89 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0496E0E235ACA1A00F60B89 /* Preview Assets.xcassets */; };
-		A0496E1D235ACA1A00F60B89 /* best_seriesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0496E1C235ACA1A00F60B89 /* best_seriesTests.swift */; };
 		A0496E28235ACA1A00F60B89 /* best_seriesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0496E27235ACA1A00F60B89 /* best_seriesUITests.swift */; };
 		A0496E3E235ACF6A00F60B89 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0496E3C235ACF6A00F60B89 /* LaunchScreen.storyboard */; };
 		A0496E40235AD32E00F60B89 /* SerieListProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0496E3F235AD32E00F60B89 /* SerieListProtocols.swift */; };
@@ -78,7 +77,6 @@
 		A0496E0E235ACA1A00F60B89 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A0496E13235ACA1A00F60B89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A0496E18235ACA1A00F60B89 /* best-seriesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "best-seriesTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		A0496E1C235ACA1A00F60B89 /* best_seriesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = best_seriesTests.swift; sourceTree = "<group>"; };
 		A0496E1E235ACA1A00F60B89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A0496E23235ACA1A00F60B89 /* best-seriesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "best-seriesUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0496E27235ACA1A00F60B89 /* best_seriesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = best_seriesUITests.swift; sourceTree = "<group>"; };
@@ -247,7 +245,6 @@
 		A0496E1B235ACA1A00F60B89 /* best-seriesTests */ = {
 			isa = PBXGroup;
 			children = (
-				A0496E1C235ACA1A00F60B89 /* best_seriesTests.swift */,
 				A0496E1E235ACA1A00F60B89 /* Info.plist */,
 			);
 			path = "best-seriesTests";
@@ -358,6 +355,7 @@
 				A0496E14235ACA1A00F60B89 /* Sources */,
 				A0496E15235ACA1A00F60B89 /* Frameworks */,
 				A0496E16235ACA1A00F60B89 /* Resources */,
+				99A0A9639475ADA1A3C7E945 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -404,6 +402,7 @@
 					};
 					A0496E17235ACA1A00F60B89 = {
 						CreatedOnToolsVersion = 11.0;
+						LastSwiftMigration = 1100;
 						TestTargetID = A0496E01235ACA1900F60B89;
 					};
 					A0496E22235ACA1A00F60B89 = {
@@ -521,6 +520,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		99A0A9639475ADA1A3C7E945 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-best-seriesTests/Pods-best-seriesTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-best-seriesTests/Pods-best-seriesTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-best-seriesTests/Pods-best-seriesTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		AF2B922C0805B5243F6D9476 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -593,7 +609,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A0496E1D235ACA1A00F60B89 /* best_seriesTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -794,6 +809,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8AUA2LN9SX;
 				INFOPLIST_FILE = "best-seriesTests/Info.plist";
@@ -805,6 +821,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.lfaiska.best-seriesTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/best-series.app/best-series";
@@ -817,6 +834,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8AUA2LN9SX;
 				INFOPLIST_FILE = "best-seriesTests/Info.plist";

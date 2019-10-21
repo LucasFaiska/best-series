@@ -11,7 +11,7 @@ import SwiftUI
 
 class SerieListPresenter: ObservableObject {
     private var interactor: SerieInteractorProtocol?
-    private var currentPage = 1
+    var currentPage = 1
     
     @Published var series: [Serie] = []
     @Published var isLoading = false
@@ -25,7 +25,7 @@ class SerieListPresenter: ObservableObject {
         self.isLoading = true
         
         interactor?.fetchBestSeries(page: currentPage, and: { serieList in
-            self.series += serieList?.results ?? []
+            self.series.append(contentsOf: serieList?.results ?? [])
             self.isLoading = false
         }, onError: {
             self.hasError = true

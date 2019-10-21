@@ -18,17 +18,26 @@ struct SerieListView: View {
     var body: some View {
         NavigationView {
             Group {
-                if presenter.isLoading {
+                if (self.presenter.isLoading && self.presenter.series.isEmpty) {
                     LoadingView()
                 } else {
-                    List(self.presenter.series) { (serie: Serie) in
-                        NavigationLink(destination: SerieDetailSceneFactory.createScene(serieId: serie.id)) {
-                            SerieListItemView(serie: serie)
+                    List {
+                        ForEach(self.presenter.series) { (serie: Serie) in
+                            NavigationLink(destination: SerieDetailSceneFactory.createScene(serieId: serie.id)) {
+                                SerieListItemView(serie: serie)
+                            }.onAppear( perform: {
+                                let index = self.presenter.series.firstIndex(where: { $0.id == serie.id })!
+                                let count = self.presenter.series.count
+                                
+                                if index == count-1 {
+                                    self.presenter.currentPage += 1
+                                    self.presenter.loadSeries()
+                                }
+                            })
                         }
                     }
                 }
             }
-            .navigationBarTitle("Bests TV Series")
         }
         .onAppear {
             if self.presenter.series.isEmpty {

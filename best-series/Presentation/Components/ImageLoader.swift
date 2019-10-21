@@ -10,8 +10,7 @@ import Foundation
 import SwiftUI
 
 class ImageLoader: ObservableObject {
-    
-    private static let imageCache = NSCache<AnyObject, AnyObject>()
+    static let imageCache = NSCache<AnyObject, AnyObject>()
     
     @Published var image: UIImage? = nil
     
@@ -24,7 +23,6 @@ class ImageLoader: ObservableObject {
         }
 
         URLSession.shared.dataTask(with: url) { (data, res, error) in
-            //print("\(String(describing: data))")
             guard let data = data, let image = UIImage(data: data) else {
                 return
             }

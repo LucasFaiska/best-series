@@ -9,7 +9,6 @@ import SwiftUI
 
 struct SerieListItemView: View {
     var serie: Serie
-    
     @ObservedObject var imageLoader: ImageLoader = ImageLoader()
     
     var body: some View {

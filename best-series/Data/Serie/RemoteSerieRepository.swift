@@ -39,7 +39,8 @@ class RemoteSerieRepository: SerieRepository {
         let path = API_BASE_URL + "/tv/" + String(serieId)
         
         let parameters: Parameters = [
-            "api_key": API_KEY
+            "api_key": API_KEY,
+            "append_to_response": "similar",
         ]
         
         Alamofire.request(path, parameters: parameters).debugLog().responseJSON { response in
