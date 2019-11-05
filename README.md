@@ -15,7 +15,7 @@ Aplicação que lista as series mais populares do themoviedb
 
 **3:** Instale as dependências com `pod install`
 
-**4:** Abra o arquivo `best-series.xcodeproj`
+**4:** Abra o arquivo `best-series.xcworkspace`
 
 **5:** Pressione `⌘ + R` para rodar o projeto
 
