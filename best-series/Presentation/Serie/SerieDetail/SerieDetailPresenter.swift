@@ -8,27 +8,31 @@
 
 import Foundation
 
-class SerieDetailPresenter: ObservableObject {
-    private var interactor: SerieInteractorProtocol?
-    
+class SerieDetailPresenter: SerieDetailPresentationLogic, ObservableObject {
+    @Published var isLoading: Bool
     @Published var serie: Serie?
-    @Published var isLoading = false
-    @Published var hasError = false
+    //@Published var hasError = false
+    
+    private var interactor: SerieInteractorProtocol?
     
     init (interactor: SerieInteractorProtocol) {
         self.interactor = interactor
+        self.isLoading = true
+    }
+    
+    func onSeriesDetailLoadedSuccessful(_ serie: Serie?) -> Void {
+        self.serie = serie ?? Serie()
+        self.isLoading = false
+    }
+    
+    func onSeriesDetailLoadedError() -> Void {
+        //self.hasError = true
+        isLoading = false
     }
     
     func loadSerieDetail(serieId: Int) {
-        self.isLoading = true
-        
-        interactor?.fetchSerieDetail(serieId: serieId, and: { serie in
-            self.serie = serie ?? Serie()
-            self.isLoading = false
-        }, onError: {
-            self.hasError = true
-            self.isLoading = false
-        })
+        isLoading = true
+        interactor?.fetchSerieDetail(serieId: serieId, and: onSeriesDetailLoadedSuccessful, onError: onSeriesDetailLoadedError)
     }
 }
 

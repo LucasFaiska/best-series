@@ -11,3 +11,12 @@ import SwiftUI
 protocol SerieDetailSceneCreationLogic {
     static func createScene(serieId: Int) -> SerieDetailView
 }
+
+protocol SerieDetailPresentationLogic {
+    var isLoading:Bool { get set }
+    var serie:Serie? { get set }
+ 
+    func onSeriesDetailLoadedSuccessful(_ serie: Serie?) -> Void
+    func onSeriesDetailLoadedError() -> Void
+    func loadSerieDetail(serieId: Int)
+}

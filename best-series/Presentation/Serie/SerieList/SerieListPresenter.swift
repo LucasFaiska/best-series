@@ -21,15 +21,18 @@ class SerieListPresenter: ObservableObject {
         self.interactor = interactor
     }
     
+    func onBestSeriesLoadedSuccessful(_ serieList:SerieList?) -> Void {
+        self.series.append(contentsOf: serieList?.results ?? [])
+        self.isLoading = false
+    }
+    
+    func onBestSeriesLoadedError() -> Void {
+        self.hasError = true
+        self.isLoading = false
+    }
+    
     func loadSeries() {
         self.isLoading = true
-        
-        interactor?.fetchBestSeries(page: currentPage, and: { serieList in
-            self.series.append(contentsOf: serieList?.results ?? [])
-            self.isLoading = false
-        }, onError: {
-            self.hasError = true
-            self.isLoading = false
-        })
+        interactor?.fetchBestSeries(page: currentPage, and: onBestSeriesLoadedSuccessful, onError: onBestSeriesLoadedError)
     }
 }

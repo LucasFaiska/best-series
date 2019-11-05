@@ -14,15 +14,17 @@ struct SerieDetailView: View {
     
     var serieId: Int
     
-    init(serieId: Int, presenter: SerieDetailPresenter) {
+    init(serieId: Int, presenter: SerieDetailPresentationLogic) {
         self.serieId = serieId
-        self.presenter = presenter
+        self.presenter = presenter as! SerieDetailPresenter
     }
     
     var body: some View {
         ScrollView {
             VStack {
-                if (self.presenter.serie != nil) {
+                if (self.presenter.isLoading) {
+                    LoadingView()
+                } else {
                     PosterView(image: self.imageLoader.image)
                         .onAppear {
                             if let url = self.presenter.serie?.posterUrl {
@@ -30,9 +32,7 @@ struct SerieDetailView: View {
                             }
                     }
                     SerieDetailsSectionView(serie: self.presenter.serie!).padding(16)
-                    SimilarSeriesSectionView(series: (self.presenter.serie?.similarSeries.results)!).padding(16)
-                } else {
-                    LoadingView()
+                    SimilarSeriesSectionView(series: self.presenter.serie?.similarSeries.results ?? []).padding(16)
                 }
             }
             .onAppear {

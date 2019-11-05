@@ -57,10 +57,6 @@ class RemoteSerieRepository: SerieRepository {
             }
         }
     }
-    
-    func getSimilarSeries(id: Int, and onCompletion: @escaping (SerieListEntity?) -> Void, onError: @escaping () -> Void) {
-        
-    }
 }
 
 extension Request {
