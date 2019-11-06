@@ -9,10 +9,10 @@
 import SwiftUI
 
 protocol SerieDetailSceneCreationLogic {
-    static func createScene(serieId: Int) -> SerieDetailView
+    static func createScene(serieId: Int) -> SerieDetailView<SerieDetailPresenter>
 }
 
-protocol SerieDetailPresentationLogic {
+protocol SerieDetailPresentationLogic: ObservableObject  {
     var isLoading:Bool { get set }
     var serie:Serie? { get set }
  

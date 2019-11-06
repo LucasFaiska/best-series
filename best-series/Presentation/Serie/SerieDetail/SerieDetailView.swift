@@ -8,15 +8,15 @@
 
 import SwiftUI
 
-struct SerieDetailView: View {
-    @ObservedObject var presenter: SerieDetailPresenter
+struct SerieDetailView<T>: View where T:SerieDetailPresentationLogic {
+    @ObservedObject var presenter: T
     @ObservedObject var imageLoader = ImageLoader()
     
     var serieId: Int
     
-    init(serieId: Int, presenter: SerieDetailPresentationLogic) {
+    init(serieId: Int, presenter: T) {
         self.serieId = serieId
-        self.presenter = presenter as! SerieDetailPresenter
+        self.presenter = presenter
     }
     
     var body: some View {

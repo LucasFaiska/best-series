@@ -9,7 +9,7 @@
 import Foundation
 import SwiftUI
 
-class SerieListPresenter: ObservableObject {
+class SerieListPresenter: SerieListPresentationLogic {
     private var interactor: SerieInteractorProtocol?
     var currentPage = 1
     
@@ -24,6 +24,10 @@ class SerieListPresenter: ObservableObject {
     func onBestSeriesLoadedSuccessful(_ serieList:SerieList?) -> Void {
         self.series.append(contentsOf: serieList?.results ?? [])
         self.isLoading = false
+        
+        if (self.currentPage < (serieList?.totalPages)!) {
+            self.currentPage += 1
+        }
     }
     
     func onBestSeriesLoadedError() -> Void {

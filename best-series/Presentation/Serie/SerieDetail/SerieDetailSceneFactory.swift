@@ -10,7 +10,7 @@ import Foundation
 import SwiftUI
 
 class SerieDetailSceneFactory: SerieDetailSceneCreationLogic {
-    static func createScene(serieId: Int) -> SerieDetailView {
+    static func createScene(serieId: Int) -> SerieDetailView<SerieDetailPresenter> {
         let repository = RemoteSerieRepository()
         let interactor = SerieInteractor(serieRepository: repository)
         let presenter = SerieDetailPresenter(interactor: interactor)

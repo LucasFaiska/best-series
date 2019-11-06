@@ -14,7 +14,7 @@ class SerieListSceneFactory: SerieListSceneCreationLogic {
         let repository = RemoteSerieRepository()
         let interactor = SerieInteractor(serieRepository: repository)
         let presenter = SerieListPresenter(interactor: interactor)
-        let view = SerieListView(presenter: presenter)
+        let view = SerieListView<SerieListPresenter>(presenter: presenter)
         return UIHostingController(rootView: view)
     }
 }

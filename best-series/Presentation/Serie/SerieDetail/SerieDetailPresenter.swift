@@ -8,7 +8,7 @@
 
 import Foundation
 
-class SerieDetailPresenter: SerieDetailPresentationLogic, ObservableObject {
+class SerieDetailPresenter: SerieDetailPresentationLogic {
     @Published var isLoading: Bool
     @Published var serie: Serie?
     //@Published var hasError = false

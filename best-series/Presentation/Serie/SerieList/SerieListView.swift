@@ -8,10 +8,10 @@
 
 import SwiftUI
 
-struct SerieListView: View {
-    @ObservedObject var presenter: SerieListPresenter
+struct SerieListView<T>: View where T:SerieListPresentationLogic {
+    @ObservedObject var presenter: T
     
-    init(presenter: SerieListPresenter) {
+    init(presenter: T) {
         self.presenter = presenter
     }
     
@@ -30,7 +30,6 @@ struct SerieListView: View {
                                 let count = self.presenter.series.count
                                 
                                 if index == count-1 {
-                                    self.presenter.currentPage += 1
                                     self.presenter.loadSeries()
                                 }
                             })

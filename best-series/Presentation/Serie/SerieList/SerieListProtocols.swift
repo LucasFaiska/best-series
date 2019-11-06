@@ -11,3 +11,12 @@ import UIKit
 protocol SerieListSceneCreationLogic {
     static func createScene() -> UIViewController
 }
+
+protocol SerieListPresentationLogic: ObservableObject  {
+    var isLoading:Bool { get set }
+    var series: [Serie] { get set }
+ 
+    func onBestSeriesLoadedSuccessful(_ serieList:SerieList?) -> Void
+    func onBestSeriesLoadedError() -> Void
+    func loadSeries()
+}
