@@ -7,6 +7,7 @@
 //
 import SwiftUI
 
+@available(iOS 13.0, *)
 struct SerieListItemView: View {
     var serie: Serie
     @ObservedObject var imageLoader: ImageLoader = ImageLoader()

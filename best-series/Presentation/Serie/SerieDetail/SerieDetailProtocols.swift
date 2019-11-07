@@ -8,10 +8,12 @@
 
 import SwiftUI
 
+@available(iOS 13.0, *)
 protocol SerieDetailSceneCreationLogic {
     static func createScene(serieId: Int) -> SerieDetailView<SerieDetailPresenter>
 }
 
+@available(iOS 13.0, *)
 protocol SerieDetailPresentationLogic: ObservableObject  {
     var isLoading:Bool { get set }
     var serie:Serie? { get set }

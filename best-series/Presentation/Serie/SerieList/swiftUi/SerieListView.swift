@@ -8,26 +8,29 @@
 
 import SwiftUI
 
-struct SerieListView<T>: View where T:SerieListPresentationLogic {
-    @ObservedObject var presenter: T
+@available(iOS 13.0, *)
+struct SerieListView: View {
+    var presenter: SerieListPresentationLogic
+    @ObservedObject var viewModel: SerieListViewModel
     
-    init(presenter: T) {
+    init(presenter: SerieListPresentationLogic) {
         self.presenter = presenter
+        self.viewModel = presenter.view as! SerieListViewModel
     }
     
     var body: some View {
         NavigationView {
             Group {
-                if (self.presenter.isLoading && self.presenter.series.isEmpty) {
+                if (self.viewModel.isLoading && self.viewModel.series.isEmpty) {
                     LoadingView()
                 } else {
                     List {
-                        ForEach(self.presenter.series) { (serie: Serie) in
+                        ForEach(self.viewModel.series) { (serie: Serie) in
                             NavigationLink(destination: SerieDetailSceneFactory.createScene(serieId: serie.id)) {
                                 SerieListItemView(serie: serie)
                             }.onAppear( perform: {
-                                let index = self.presenter.series.firstIndex(where: { $0.id == serie.id })!
-                                let count = self.presenter.series.count
+                                let index = self.viewModel.series.firstIndex(where: { $0.id == serie.id })!
+                                let count = self.viewModel.series.count
                                 
                                 if index == count-1 {
                                     self.presenter.loadSeries()
@@ -39,7 +42,7 @@ struct SerieListView<T>: View where T:SerieListPresentationLogic {
             }
         }
         .onAppear {
-            if self.presenter.series.isEmpty {
+            if self.viewModel.series.isEmpty {
                 self.presenter.loadSeries()
             }
         }

@@ -9,6 +9,7 @@
 import Foundation
 import SwiftUI
 
+@available(iOS 13.0, *)
 class SerieDetailSceneFactory: SerieDetailSceneCreationLogic {
     static func createScene(serieId: Int) -> SerieDetailView<SerieDetailPresenter> {
         let repository = RemoteSerieRepository()

@@ -2,28 +2,25 @@
 //  SerieListPresenter.swift
 //  best-series
 //
-//  Created by Lucas de Oliveira on 10/19/19.
+//  Created by Lucas de Oliveira on 11/7/19.
 //  Copyright © 2019 Lucas de Oliveira. All rights reserved.
 //
 
 import Foundation
-import SwiftUI
 
 class SerieListPresenter: SerieListPresentationLogic {
-    private var interactor: SerieInteractorProtocol?
+    private var interactor: SerieInteractorProtocol
+    var view: SerieListViewLogic
     var currentPage = 1
     
-    @Published var series: [Serie] = []
-    @Published var isLoading = false
-    @Published var hasError = false
-    
-    init (interactor: SerieInteractorProtocol) {
+    init (view: SerieListViewLogic, interactor: SerieInteractorProtocol) {
+        self.view = view
         self.interactor = interactor
     }
     
     func onBestSeriesLoadedSuccessful(_ serieList:SerieList?) -> Void {
-        self.series.append(contentsOf: serieList?.results ?? [])
-        self.isLoading = false
+        view.present(series: serieList?.results ?? [])
+        view.hideLoading()
         
         if (self.currentPage < (serieList?.totalPages)!) {
             self.currentPage += 1
@@ -31,12 +28,12 @@ class SerieListPresenter: SerieListPresentationLogic {
     }
     
     func onBestSeriesLoadedError() -> Void {
-        self.hasError = true
-        self.isLoading = false
+        //self.view.hasError = true
+        view.hideLoading()
     }
     
     func loadSeries() {
-        self.isLoading = true
-        interactor?.fetchBestSeries(page: currentPage, and: onBestSeriesLoadedSuccessful, onError: onBestSeriesLoadedError)
+        view.showLoading()
+        interactor.fetchBestSeries(page: currentPage, and: onBestSeriesLoadedSuccessful, onError: onBestSeriesLoadedError)
     }
 }

@@ -31,7 +31,11 @@
 		A0496E40235AD32E00F60B89 /* SerieListProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0496E3F235AD32E00F60B89 /* SerieListProtocols.swift */; };
 		A0496E42235AD44600F60B89 /* SerieListSceneFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0496E41235AD44600F60B89 /* SerieListSceneFactory.swift */; };
 		A0496E44235AD52C00F60B89 /* SerieListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0496E43235AD52C00F60B89 /* SerieListView.swift */; };
-		A0496E46235B92B200F60B89 /* SerieListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0496E45235B92B200F60B89 /* SerieListPresenter.swift */; };
+		A0496E46235B92B200F60B89 /* SerieListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0496E45235B92B200F60B89 /* SerieListViewModel.swift */; };
+		A0669F2A23736E8C00D3E3FC /* SerieListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0669F2923736E8C00D3E3FC /* SerieListViewController.swift */; };
+		A0669F2C23736F9C00D3E3FC /* SerieListItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0669F2B23736F9C00D3E3FC /* SerieListItemCell.swift */; };
+		A0669F2E2373731400D3E3FC /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0669F2D2373731400D3E3FC /* Extensions.swift */; };
+		A0669F332373DC5D00D3E3FC /* SerieListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0669F322373DC5D00D3E3FC /* SerieListPresenter.swift */; };
 		DF94EFA662A9EFF6173CE934 /* Pods_best_series.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB8EABD9BB8300AD96355269 /* Pods_best_series.framework */; };
 /* End PBXBuildFile section */
 
@@ -85,7 +89,11 @@
 		A0496E3F235AD32E00F60B89 /* SerieListProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerieListProtocols.swift; sourceTree = "<group>"; };
 		A0496E41235AD44600F60B89 /* SerieListSceneFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerieListSceneFactory.swift; sourceTree = "<group>"; };
 		A0496E43235AD52C00F60B89 /* SerieListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerieListView.swift; sourceTree = "<group>"; };
-		A0496E45235B92B200F60B89 /* SerieListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerieListPresenter.swift; sourceTree = "<group>"; };
+		A0496E45235B92B200F60B89 /* SerieListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerieListViewModel.swift; sourceTree = "<group>"; };
+		A0669F2923736E8C00D3E3FC /* SerieListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerieListViewController.swift; sourceTree = "<group>"; };
+		A0669F2B23736F9C00D3E3FC /* SerieListItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerieListItemCell.swift; sourceTree = "<group>"; };
+		A0669F2D2373731400D3E3FC /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		A0669F322373DC5D00D3E3FC /* SerieListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerieListPresenter.swift; sourceTree = "<group>"; };
 		AB8EABD9BB8300AD96355269 /* Pods_best_series.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_best_series.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC21900B79460D53EC9A829A /* Pods-best-series-best-seriesUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-best-series-best-seriesUITests.debug.xcconfig"; path = "Target Support Files/Pods-best-series-best-seriesUITests/Pods-best-series-best-seriesUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		E2D2BA32CAC62BF669B0B11A /* Pods-best-seriesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-best-seriesTests.debug.xcconfig"; path = "Target Support Files/Pods-best-seriesTests/Pods-best-seriesTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -193,6 +201,7 @@
 			children = (
 				A0219D1D235CE35A006B9444 /* LoadingView.swift */,
 				A0219D1F235CFD47006B9444 /* ImageLoader.swift */,
+				A0669F2D2373731400D3E3FC /* Extensions.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -305,11 +314,11 @@
 		A0496E3A235ACCBF00F60B89 /* SerieList */ = {
 			isa = PBXGroup;
 			children = (
+				A0669F352373E1BE00D3E3FC /* uiKit */,
+				A0669F342373E1AD00D3E3FC /* swiftUi */,
+				A0669F322373DC5D00D3E3FC /* SerieListPresenter.swift */,
 				A0496E3F235AD32E00F60B89 /* SerieListProtocols.swift */,
 				A0496E41235AD44600F60B89 /* SerieListSceneFactory.swift */,
-				A0496E43235AD52C00F60B89 /* SerieListView.swift */,
-				A0496E45235B92B200F60B89 /* SerieListPresenter.swift */,
-				A0219D16235C42FF006B9444 /* SerieListItemView.swift */,
 			);
 			path = SerieList;
 			sourceTree = "<group>";
@@ -323,6 +332,25 @@
 				A0219D27235D299C006B9444 /* SerieDetailPresenter.swift */,
 			);
 			path = SerieDetail;
+			sourceTree = "<group>";
+		};
+		A0669F342373E1AD00D3E3FC /* swiftUi */ = {
+			isa = PBXGroup;
+			children = (
+				A0496E45235B92B200F60B89 /* SerieListViewModel.swift */,
+				A0496E43235AD52C00F60B89 /* SerieListView.swift */,
+				A0219D16235C42FF006B9444 /* SerieListItemView.swift */,
+			);
+			path = swiftUi;
+			sourceTree = "<group>";
+		};
+		A0669F352373E1BE00D3E3FC /* uiKit */ = {
+			isa = PBXGroup;
+			children = (
+				A0669F2923736E8C00D3E3FC /* SerieListViewController.swift */,
+				A0669F2B23736F9C00D3E3FC /* SerieListItemCell.swift */,
+			);
+			path = uiKit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -583,15 +611,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0669F332373DC5D00D3E3FC /* SerieListPresenter.swift in Sources */,
 				A0496E40235AD32E00F60B89 /* SerieListProtocols.swift in Sources */,
 				A0219D09235C1640006B9444 /* SerieRepository.swift in Sources */,
 				A0219D28235D299C006B9444 /* SerieDetailPresenter.swift in Sources */,
 				A0219D20235CFD47006B9444 /* ImageLoader.swift in Sources */,
 				A0219D0B235C1784006B9444 /* RemoteSerieRepository.swift in Sources */,
 				A0219D13235C3DD9006B9444 /* SerieInteractor.swift in Sources */,
-				A0496E46235B92B200F60B89 /* SerieListPresenter.swift in Sources */,
+				A0496E46235B92B200F60B89 /* SerieListViewModel.swift in Sources */,
 				A0219D22235D0952006B9444 /* SerieDetailView.swift in Sources */,
 				A0219D1E235CE35A006B9444 /* LoadingView.swift in Sources */,
+				A0669F2E2373731400D3E3FC /* Extensions.swift in Sources */,
 				A0219D06235C02BE006B9444 /* SerieEntity.swift in Sources */,
 				A0219D26235D0C4E006B9444 /* SerieDetailProtocols.swift in Sources */,
 				A0219D19235C4CBC006B9444 /* SerieModel.swift in Sources */,
@@ -599,9 +629,11 @@
 				A0219D0E235C1BF3006B9444 /* ApiConstants.swift in Sources */,
 				A0496E42235AD44600F60B89 /* SerieListSceneFactory.swift in Sources */,
 				A0219D17235C42FF006B9444 /* SerieListItemView.swift in Sources */,
+				A0669F2C23736F9C00D3E3FC /* SerieListItemCell.swift in Sources */,
 				A0219D24235D0C17006B9444 /* SerieDetailSceneFactory.swift in Sources */,
 				A0496E06235ACA1900F60B89 /* AppDelegate.swift in Sources */,
 				A0496E44235AD52C00F60B89 /* SerieListView.swift in Sources */,
+				A0669F2A23736E8C00D3E3FC /* SerieListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -771,9 +803,21 @@
 				DEVELOPMENT_TEAM = 8AUA2LN9SX;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "best-series/ConfigFiles/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"Alamofire\"",
+					"-framework",
+					"\"AlamofireObjectMapper\"",
+					"-framework",
+					"\"ObjectMapper\"",
+					"-weak_framework",
+					SwiftUI,
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.lfaiska.best-series";
 				PRODUCT_NAME = "Best Series";
@@ -792,9 +836,21 @@
 				DEVELOPMENT_TEAM = 8AUA2LN9SX;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "best-series/ConfigFiles/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"Alamofire\"",
+					"-framework",
+					"\"AlamofireObjectMapper\"",
+					"-framework",
+					"\"ObjectMapper\"",
+					"-weak_framework",
+					SwiftUI,
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.lfaiska.best-series";
 				PRODUCT_NAME = "Best Series";

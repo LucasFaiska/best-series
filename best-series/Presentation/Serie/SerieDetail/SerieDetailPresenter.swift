@@ -8,6 +8,7 @@
 
 import Foundation
 
+@available(iOS 13.0, *)
 class SerieDetailPresenter: SerieDetailPresentationLogic {
     @Published var isLoading: Bool
     @Published var serie: Serie?

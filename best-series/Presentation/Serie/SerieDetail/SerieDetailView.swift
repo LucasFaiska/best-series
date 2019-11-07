@@ -8,6 +8,7 @@
 
 import SwiftUI
 
+@available(iOS 13.0, *)
 struct SerieDetailView<T>: View where T:SerieDetailPresentationLogic {
     @ObservedObject var presenter: T
     @ObservedObject var imageLoader = ImageLoader()

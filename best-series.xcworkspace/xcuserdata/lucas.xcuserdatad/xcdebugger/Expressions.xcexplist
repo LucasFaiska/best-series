@@ -6,13 +6,30 @@
          contextName = "Serie.firstAirDateText.getter:SerieModel.swift">
       </ContextState>
       <ContextState
+         contextName = "SerieListViewController.tableView(_:cellForRowAt:):SerieListViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "SerieListItemView.body.getter:SerieListItemView.swift">
+      </ContextState>
+      <ContextState
+         contextName = "SerieListItemCell.init(style:reuseIdentifier:):SerieListItemCell.swift">
+      </ContextState>
+      <ContextState
+         contextName = "SerieListItemCell.serie.didset:SerieListItemCell.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "serieTitleLabel.text">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "SerieListViewController.tableView(_:numberOfRowsInSection:):SerieListViewController.swift">
+      </ContextState>
+      <ContextState
          contextName = "SerieInteractor.mapEntityToModel(entity:):SerieInteractor.swift">
       </ContextState>
       <ContextState
          contextName = "SerieListView.body.getter:SerieListView.swift">
-      </ContextState>
-      <ContextState
-         contextName = "SerieListItemView.body.getter:SerieListItemView.swift">
       </ContextState>
    </ContextStates>
 </VariablesViewState>
