@@ -21,7 +21,7 @@ class SerieListItemCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        add(serieTitleLabel, offset: 8)
+        add(serieTitleLabel, offset: 0)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -36,7 +36,7 @@ class SerieListItemCell: UITableViewCell {
     private func add(_ label: UILabel, offset: CGFloat) {
         addSubview(label)
         NSLayoutConstraint.activate([
-            label.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 16),
+            label.trailingAnchor.constraint(equalTo: trailingAnchor, constant: offset),
             label.centerYAnchor.constraint(equalTo: centerYAnchor, constant: offset)
             ])
     }

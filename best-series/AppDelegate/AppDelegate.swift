@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let seriesListViewController = SerieListSceneFactory.createScene()
         
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = seriesListViewController
+        window?.rootViewController = DarkNavigationController(rootViewController: seriesListViewController)
         window?.makeKeyAndVisible()
         
         return true

@@ -6,9 +6,11 @@
 //  Copyright © 2019 Lucas de Oliveira. All rights reserved.
 //
 
+//TODO: desacoplar datasource e o delegate
+
 import UIKit
 
-class SerieListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, SerieListViewLogic {
+class SerieListViewController: UIViewController {
     var presenter: SerieListPresentationLogic?
     
     var series: [Serie] = [] {
@@ -65,7 +67,7 @@ class SerieListViewController: UIViewController, UITableViewDataSource, UITableV
         NSLayoutConstraint.activate([
             activityIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             activityIndicator.centerYAnchor.constraint(equalTo: view.centerYAnchor)
-            ])
+        ])
     }
     
     private func configColors() {
@@ -73,14 +75,17 @@ class SerieListViewController: UIViewController, UITableViewDataSource, UITableV
     }
     
     private func addSerieListTable() {
-           self.view.addSubview(serieListTableView)
-           NSLayoutConstraint.activate([
-               serieListTableView.topAnchor.constraint(equalTo: view.topAnchor),
-               serieListTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-               serieListTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-               serieListTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
-               ])
-       }
+        self.view.addSubview(serieListTableView)
+        NSLayoutConstraint.activate([
+            serieListTableView.topAnchor.constraint(equalTo: view.topAnchor),
+            serieListTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            serieListTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            serieListTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+        ])
+    }
+}
+
+extension SerieListViewController: SerieListViewLogic {
     
     func showLoading() {
         DispatchQueue.main.async {
@@ -97,8 +102,11 @@ class SerieListViewController: UIViewController, UITableViewDataSource, UITableV
     }
     
     func present(series: [Serie]) {
-        self.series = series
+        self.series.append(contentsOf: series)
     }
+}
+
+extension SerieListViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
@@ -112,12 +120,19 @@ class SerieListViewController: UIViewController, UITableViewDataSource, UITableV
         return self.series.count
     }
     
+    func loadMoreSeriesIfNecessary(row: Int) {
+       if row == series.count - 1 {
+            self.presenter?.loadSeries()
+        }
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: SerieListItemCell.reuseIdentifier, for: indexPath) as? SerieListItemCell else {
             return UITableViewCell()
         }
         
         cell.serie = series[indexPath.row]
+        loadMoreSeriesIfNecessary(row: indexPath.row)
         
         return cell
     }
