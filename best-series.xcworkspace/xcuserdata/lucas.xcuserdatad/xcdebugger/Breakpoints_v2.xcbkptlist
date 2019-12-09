@@ -208,8 +208,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "49"
             endingLineNumber = "49"
-            landmarkName = "Serie"
-            landmarkType = "14">
+            landmarkName = "posterUrl"
+            landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -407,22 +407,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "ECD0A8B0-7EC4-49A6-8567-5B53F4CE35E6"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "best-series/Presentation/Serie/SerieList/uiKit/SerieListItemCell.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
-            landmarkName = "init(style:reuseIdentifier:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "8542DFB8-A542-4937-A4CE-6D69E50B857F"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -462,8 +446,8 @@
             filePath = "best-series/Presentation/Serie/SerieList/uiKit/SerieListViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "105"
-            endingLineNumber = "105"
+            startingLineNumber = "99"
+            endingLineNumber = "99"
             landmarkName = "present(series:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -494,10 +478,90 @@
             filePath = "best-series/Presentation/Serie/SerieList/uiKit/SerieListViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "124"
-            endingLineNumber = "124"
+            startingLineNumber = "119"
+            endingLineNumber = "119"
             landmarkName = "loadMoreSeriesIfNecessary(row:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B2F118B5-AE67-46E9-A9A1-E3A07DE97BD6"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "best-series/Presentation/Serie/SerieList/uiKit/SerieListItemCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "serie"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "24F76423-D8D0-4B66-BB4B-E9006EC54459"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pods/Kingfisher/Sources/Extensions/ImageView+Kingfisher.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "205"
+            endingLineNumber = "205"
+            landmarkName = "setImage(with:placeholder:options:progressBlock:completionHandler:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "24F76423-D8D0-4B66-BB4B-E9006EC54459 - fdf5ee2cdac135b4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(extension in Kingfisher):Kingfisher.KingfisherWrapper&lt;A where A: __C.UIImageView&gt;.setImage(with: Swift.Optional&lt;Kingfisher.Resource&gt;, placeholder: Swift.Optional&lt;Kingfisher.Placeholder&gt;, options: Swift.Optional&lt;Swift.Array&lt;Kingfisher.KingfisherOptionsInfoItem&gt;&gt;, progressBlock: Swift.Optional&lt;(Swift.Int64, Swift.Int64) -&gt; ()&gt;, completionHandler: Swift.Optional&lt;(Swift.Result&lt;Kingfisher.RetrieveImageResult, Kingfisher.KingfisherError&gt;) -&gt; ()&gt;) -&gt; Swift.Optional&lt;Kingfisher.DownloadTask&gt;"
+                  moduleName = "Kingfisher"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lucas/IosProjects/best-series/Pods/Kingfisher/Sources/Extensions/ImageView+Kingfisher.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "205"
+                  endingLineNumber = "205"
+                  offsetFromSymbolStart = "120">
+               </Location>
+               <Location
+                  uuid = "24F76423-D8D0-4B66-BB4B-E9006EC54459 - cb326db776474bc8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Kingfisher.Resource) -&gt; Kingfisher.Source in (extension in Kingfisher):Kingfisher.KingfisherWrapper&lt;A where A: __C.UIImageView&gt;.setImage(with: Swift.Optional&lt;Kingfisher.Resource&gt;, placeholder: Swift.Optional&lt;Kingfisher.Placeholder&gt;, options: Swift.Optional&lt;Swift.Array&lt;Kingfisher.KingfisherOptionsInfoItem&gt;&gt;, progressBlock: Swift.Optional&lt;(Swift.Int64, Swift.Int64) -&gt; ()&gt;, completionHandler: Swift.Optional&lt;(Swift.Result&lt;Kingfisher.RetrieveImageResult, Kingfisher.KingfisherError&gt;) -&gt; ()&gt;) -&gt; Swift.Optional&lt;Kingfisher.DownloadTask&gt;"
+                  moduleName = "Kingfisher"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lucas/IosProjects/best-series/Pods/Kingfisher/Sources/Extensions/ImageView+Kingfisher.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "205"
+                  endingLineNumber = "205"
+                  offsetFromSymbolStart = "24">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FA755CA3-AB09-4463-BBDD-22C465885814"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "best-series/Presentation/Serie/SerieList/uiKit/SerieListItemCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "serie"
+            landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class SerieListItemCell: UITableViewCell {
     static let reuseIdentifier = "SerieCell"
@@ -14,14 +15,24 @@ class SerieListItemCell: UITableViewCell {
     var serie: Serie? {
         didSet {
             serieTitleLabel.text = serie?.title
+            seriePosterImageView.kf.setImage(with: serie?.posterUrl)
         }
     }
     
     private let serieTitleLabel = UILabel.with(textColor: .black, fontSize: 17)
+    private let seriePosterImageView: UIImageView = {
+        let imageView = UIImageView(frame: .zero)
+        imageView.contentMode = .scaleAspectFit
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        //imageView.layer.cornerRadius = 10.0
+        //imageView.clipsToBounds = true
+        return imageView
+    }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        add(serieTitleLabel, offset: 0)
+        addSeriePosterImageView(seriePosterImageView)
+        //add(serieTitleLabel, offset: 0)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -33,10 +44,18 @@ class SerieListItemCell: UITableViewCell {
         self.serie = nil
     }
     
+    private func addSeriePosterImageView(_ posterImageView: UIImageView) {
+        addSubview(posterImageView)
+        NSLayoutConstraint.activate([
+            posterImageView.centerXAnchor.constraint(equalTo: centerXAnchor),
+            posterImageView.centerYAnchor.constraint(equalTo: centerYAnchor),
+            posterImageView.heightAnchor.constraint(equalToConstant: 500),
+            ])
+    }
+    
     private func add(_ label: UILabel, offset: CGFloat) {
         addSubview(label)
         NSLayoutConstraint.activate([
-            label.trailingAnchor.constraint(equalTo: trailingAnchor, constant: offset),
             label.centerYAnchor.constraint(equalTo: centerYAnchor, constant: offset)
             ])
     }

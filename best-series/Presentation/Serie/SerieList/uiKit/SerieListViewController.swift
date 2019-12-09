@@ -23,13 +23,7 @@ class SerieListViewController: UIViewController {
     
     private let activityIndicator: UIActivityIndicatorView = {
         let activityIndicatorView: UIActivityIndicatorView
-        
-        if #available(iOS 13.0, *) {
-            activityIndicatorView = UIActivityIndicatorView(style: .large)
-        } else {
-            activityIndicatorView = UIActivityIndicatorView(style: .whiteLarge)
-        }
-        
+        activityIndicatorView = UIActivityIndicatorView(style: .whiteLarge)
         activityIndicatorView.translatesAutoresizingMaskIntoConstraints = false
         return activityIndicatorView
     }()
@@ -108,8 +102,9 @@ extension SerieListViewController: SerieListViewLogic {
 
 extension SerieListViewController: UITableViewDataSource, UITableViewDelegate {
     
+    //@TODO Find a way to do this height dynamic
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        return 540
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {

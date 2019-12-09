@@ -8,6 +8,7 @@ target 'best-series' do
   # Pods for best-series
   pod 'Alamofire', '~> 4.7'
   pod 'AlamofireObjectMapper', '~> 5.2.1'
+  pod 'Kingfisher', '~> 5.0'
 
   target 'best-seriesTests' do
     inherit! :search_paths

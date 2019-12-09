@@ -3,7 +3,7 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "Serie.firstAirDateText.getter:SerieModel.swift">
+         contextName = "SerieListView.body.getter:SerieListView.swift">
       </ContextState>
       <ContextState
          contextName = "SerieListViewController.tableView(_:cellForRowAt:):SerieListViewController.swift">
@@ -18,6 +18,9 @@
          contextName = "SerieListItemCell.serie.didset:SerieListItemCell.swift">
          <PersistentStrings>
             <PersistentString
+               value = "serie">
+            </PersistentString>
+            <PersistentString
                value = "serieTitleLabel.text">
             </PersistentString>
          </PersistentStrings>
@@ -29,7 +32,7 @@
          contextName = "SerieInteractor.mapEntityToModel(entity:):SerieInteractor.swift">
       </ContextState>
       <ContextState
-         contextName = "SerieListView.body.getter:SerieListView.swift">
+         contextName = "Serie.firstAirDateText.getter:SerieModel.swift">
       </ContextState>
    </ContextStates>
 </VariablesViewState>
