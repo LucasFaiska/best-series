@@ -205,7 +205,6 @@
 			children = (
 				A0219D1D235CE35A006B9444 /* LoadingView.swift */,
 				A0219D1F235CFD47006B9444 /* ImageLoader.swift */,
-				A0669F2D2373731400D3E3FC /* Extensions.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -361,6 +360,7 @@
 		A0669F392373F9F600D3E3FC /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				A0669F2D2373731400D3E3FC /* Extensions.swift */,
 				A0669F3A2373FA0100D3E3FC /* Colors.swift */,
 				A0669F3C2373FAF200D3E3FC /* DarkNavigationController.swift */,
 			);

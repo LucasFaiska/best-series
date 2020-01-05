@@ -20,18 +20,21 @@ class SerieListItemCell: UITableViewCell {
     }
     
     private let serieTitleLabel = UILabel.with(textColor: .black, fontSize: 17)
+    
     private let seriePosterImageView: UIImageView = {
         let imageView = UIImageView(frame: .zero)
         imageView.contentMode = .scaleAspectFit
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        //imageView.layer.cornerRadius = 10.0
-        //imageView.clipsToBounds = true
+        imageView.clipsToBounds = true
         return imageView
     }()
     
+    //@TODO fazer uma classe cardview que tenha uma UiImageView e uma UiLabel e o gradient por cima
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        addSeriePosterImageView(seriePosterImageView)
+        addCellContent(seriePosterImageView)
+        //addSeriePosterImageView(seriePosterImageView, seriePosterContainerView)
+        //addSeriePosterImageView(seriePosterImageView)
         //add(serieTitleLabel, offset: 0)
     }
     
@@ -44,19 +47,15 @@ class SerieListItemCell: UITableViewCell {
         self.serie = nil
     }
     
-    private func addSeriePosterImageView(_ posterImageView: UIImageView) {
+    private func addCellContent(_ posterImageView: UIImageView) {
         addSubview(posterImageView)
+        
         NSLayoutConstraint.activate([
             posterImageView.centerXAnchor.constraint(equalTo: centerXAnchor),
             posterImageView.centerYAnchor.constraint(equalTo: centerYAnchor),
             posterImageView.heightAnchor.constraint(equalToConstant: 500),
-            ])
-    }
-    
-    private func add(_ label: UILabel, offset: CGFloat) {
-        addSubview(label)
-        NSLayoutConstraint.activate([
-            label.centerYAnchor.constraint(equalTo: centerYAnchor, constant: offset)
-            ])
+            posterImageView.topAnchor.constraint(equalTo: topAnchor, constant: 20),
+            posterImageView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20)
+        ])
     }
 }

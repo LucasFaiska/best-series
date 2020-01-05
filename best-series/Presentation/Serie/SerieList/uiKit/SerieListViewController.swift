@@ -32,7 +32,6 @@ class SerieListViewController: UIViewController {
         let tableView = UITableView(frame: .zero)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.allowsSelection = false
-        tableView.backgroundColor = .white
         tableView.tableFooterView = UIView()
         tableView.register(SerieListItemCell.self, forCellReuseIdentifier: SerieListItemCell.reuseIdentifier)
         return tableView
@@ -102,9 +101,12 @@ extension SerieListViewController: SerieListViewLogic {
 
 extension SerieListViewController: UITableViewDataSource, UITableViewDelegate {
     
-    //@TODO Find a way to do this height dynamic
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 540
+        return UITableView.automaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -128,6 +130,7 @@ extension SerieListViewController: UITableViewDataSource, UITableViewDelegate {
         
         cell.serie = series[indexPath.row]
         loadMoreSeriesIfNecessary(row: indexPath.row)
+        cell.layoutIfNeeded()
         
         return cell
     }
