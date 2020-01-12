@@ -19,23 +19,29 @@ class SerieListItemCell: UITableViewCell {
         }
     }
     
-    private let serieTitleLabel = UILabel.with(textColor: .black, fontSize: 17)
+    private let serieCellCardView: CardView = {
+        let cardView = CardView()
+        cardView.cornerRadius = 10
+        cardView.shadowOpacity = 1
+        cardView.shadowOffset = CGSize(width: 1, height: 1)
+        cardView.translatesAutoresizingMaskIntoConstraints = false
+        cardView.backgroundColor = UIColor.white
+        return cardView
+    }()
     
+    private let serieTitleLabel = UILabel.with(textColor: .black, fontSize: 17)
+        
     private let seriePosterImageView: UIImageView = {
         let imageView = UIImageView(frame: .zero)
         imageView.contentMode = .scaleAspectFit
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.clipsToBounds = true
         return imageView
     }()
     
     //@TODO fazer uma classe cardview que tenha uma UiImageView e uma UiLabel e o gradient por cima
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        addCellContent(seriePosterImageView)
-        //addSeriePosterImageView(seriePosterImageView, seriePosterContainerView)
-        //addSeriePosterImageView(seriePosterImageView)
-        //add(serieTitleLabel, offset: 0)
+        addCellContent(serieCellCardView, seriePosterImageView)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -47,15 +53,22 @@ class SerieListItemCell: UITableViewCell {
         self.serie = nil
     }
     
-    private func addCellContent(_ posterImageView: UIImageView) {
-        addSubview(posterImageView)
+    private func addCellContent(_ cardView: CardView, _ posterImageView: UIImageView) {
+        addSubview(cardView)
+        cardView.addSubview(posterImageView)
+        
+        //posterImageView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            posterImageView.centerXAnchor.constraint(equalTo: centerXAnchor),
-            posterImageView.centerYAnchor.constraint(equalTo: centerYAnchor),
-            posterImageView.heightAnchor.constraint(equalToConstant: 500),
-            posterImageView.topAnchor.constraint(equalTo: topAnchor, constant: 20),
-            posterImageView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20)
+            cardView.heightAnchor.constraint(equalToConstant: 500),
+            cardView.leftAnchor.constraint(equalTo: leftAnchor, constant: 20),
+            cardView.rightAnchor.constraint(equalTo: rightAnchor, constant: -20),
+            cardView.topAnchor.constraint(equalTo: topAnchor, constant: 20),
+            cardView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20),
+            posterImageView.heightAnchor.constraint(equalTo: cardView.heightAnchor, constant: 0),
+            posterImageView.widthAnchor.constraint(equalTo: cardView.widthAnchor, constant: 0),
+            posterImageView.leftAnchor.constraint(equalTo: leftAnchor, constant: 20),
+            posterImageView.rightAnchor.constraint(equalTo: rightAnchor, constant: -20),
         ])
     }
 }
