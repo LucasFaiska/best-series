@@ -25,7 +25,7 @@ class SerieListItemCell: UITableViewCell {
         cardView.shadowOpacity = 1
         cardView.shadowOffset = CGSize(width: 1, height: 1)
         cardView.translatesAutoresizingMaskIntoConstraints = false
-        cardView.backgroundColor = UIColor.white
+        cardView.clipsToBounds = true
         return cardView
     }()
     
@@ -33,7 +33,7 @@ class SerieListItemCell: UITableViewCell {
         
     private let seriePosterImageView: UIImageView = {
         let imageView = UIImageView(frame: .zero)
-        imageView.contentMode = .scaleAspectFit
+        imageView.contentMode = .scaleToFill
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
@@ -56,8 +56,7 @@ class SerieListItemCell: UITableViewCell {
     private func addCellContent(_ cardView: CardView, _ posterImageView: UIImageView) {
         addSubview(cardView)
         cardView.addSubview(posterImageView)
-        
-        //posterImageView.translatesAutoresizingMaskIntoConstraints = false
+        //posterImageView.frame = cardView.bounds
         
         NSLayoutConstraint.activate([
             cardView.heightAnchor.constraint(equalToConstant: 500),

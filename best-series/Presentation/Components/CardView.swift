@@ -42,4 +42,17 @@ class CardView: UIView {
             layer.masksToBounds = false
         }
     }
+    
+    override func draw(_ rect: CGRect) {
+        super.draw(rect)
+        let gradient = CAGradientLayer()
+        gradient.startPoint = CGPoint(x: 0, y: 0.6)
+        gradient.endPoint = CGPoint(x: 0, y: 1)
+        gradient.frame = self.bounds
+        gradient.colors = [UIColor.clear.cgColor, UIColor.black.cgColor]
+        gradient.locations = [0.0, 0.5]
+        gradient.opacity = 0.9
+        gradient.cornerRadius = self.cornerRadius
+        self.layer.insertSublayer(gradient, at: 10)
+    }
 }
