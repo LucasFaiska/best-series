@@ -38,7 +38,7 @@
 		A0669F332373DC5D00D3E3FC /* SerieListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0669F322373DC5D00D3E3FC /* SerieListPresenter.swift */; };
 		A0669F3B2373FA0100D3E3FC /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0669F3A2373FA0100D3E3FC /* Colors.swift */; };
 		A0669F3D2373FAF200D3E3FC /* DarkNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0669F3C2373FAF200D3E3FC /* DarkNavigationController.swift */; };
-		A06A503B23CBC6470012AF6C /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06A503A23CBC6470012AF6C /* CardView.swift */; };
+		A06A503B23CBC6470012AF6C /* ListItemCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06A503A23CBC6470012AF6C /* ListItemCardView.swift */; };
 		DF94EFA662A9EFF6173CE934 /* Pods_best_series.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB8EABD9BB8300AD96355269 /* Pods_best_series.framework */; };
 /* End PBXBuildFile section */
 
@@ -99,7 +99,7 @@
 		A0669F322373DC5D00D3E3FC /* SerieListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerieListPresenter.swift; sourceTree = "<group>"; };
 		A0669F3A2373FA0100D3E3FC /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		A0669F3C2373FAF200D3E3FC /* DarkNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkNavigationController.swift; sourceTree = "<group>"; };
-		A06A503A23CBC6470012AF6C /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		A06A503A23CBC6470012AF6C /* ListItemCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemCardView.swift; sourceTree = "<group>"; };
 		AB8EABD9BB8300AD96355269 /* Pods_best_series.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_best_series.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC21900B79460D53EC9A829A /* Pods-best-series-best-seriesUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-best-series-best-seriesUITests.debug.xcconfig"; path = "Target Support Files/Pods-best-series-best-seriesUITests/Pods-best-series-best-seriesUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		E2D2BA32CAC62BF669B0B11A /* Pods-best-seriesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-best-seriesTests.debug.xcconfig"; path = "Target Support Files/Pods-best-seriesTests/Pods-best-seriesTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -207,7 +207,7 @@
 			children = (
 				A0219D1D235CE35A006B9444 /* LoadingView.swift */,
 				A0219D1F235CFD47006B9444 /* ImageLoader.swift */,
-				A06A503A23CBC6470012AF6C /* CardView.swift */,
+				A06A503A23CBC6470012AF6C /* ListItemCardView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -648,7 +648,7 @@
 				A0219D0E235C1BF3006B9444 /* ApiConstants.swift in Sources */,
 				A0496E42235AD44600F60B89 /* SerieListSceneFactory.swift in Sources */,
 				A0219D17235C42FF006B9444 /* SerieListItemView.swift in Sources */,
-				A06A503B23CBC6470012AF6C /* CardView.swift in Sources */,
+				A06A503B23CBC6470012AF6C /* ListItemCardView.swift in Sources */,
 				A0669F2C23736F9C00D3E3FC /* SerieListItemCell.swift in Sources */,
 				A0219D24235D0C17006B9444 /* SerieDetailSceneFactory.swift in Sources */,
 				A0496E06235ACA1900F60B89 /* AppDelegate.swift in Sources */,
